@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Multi-Room Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div id="register" class="section">
+          <h2>Enter your name</h2>
+          <input id="username" type="text" placeholder="Enter username" />
+          <button id="registerBtn">Register</button>
+        </div>
+
+        <div id="main" class="section hidden">
+          <div class="title">
+            <h2 id="title-username">Loading....</h2>
+          </div>
+          <div class="mid-section">
+            <div class="sidebar">
+              <h3>Your Rooms</h3>
+              <div class="no-room-found hidden" id="no-room-found">
+                No room found !!
+              </div>
+              <ul id="roomList"></ul>
+            </div>
+            <div class="chat">
+              <div id="messages"></div>
+              <input id="message" type="text" placeholder="Type a message" />
+              <button id="sendMessageBtn">Send</button>
+            </div>
+            <div class="sidebar right">
+              <h3>Create\Join Rooms</h3>
+              <input
+                id="newRoomName"
+                type="text"
+                placeholder="Create or join room"
+              />
+              <button id="createRoomBtn">Create Room</button>
+              <button id="joinRoomBtn">Join Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="utils.scipt.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
